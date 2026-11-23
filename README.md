@@ -42,10 +42,10 @@ GPIO40/41 (I2C เซนเซอร์บนบอร์ด) — ใช้ไ�
 
 ## ค่าคาลิเบรตที่ใช้จริง
 
-- L (lead, mm/รอบ): `TODO` — ดู `docs/05_calibration.md`
-- Microstep (TB6600): `TODO`
-- steps/mm: `TODO`
-- counts/mm: `TODO`
+- L (lead, mm/รอบ): `4` — ดู `docs/05_calibration.md`
+- Microstep (TB6600): `1`
+- steps/mm: `50`
+- counts/mm: `600`
 
 ## วิธี Build / Upload
 

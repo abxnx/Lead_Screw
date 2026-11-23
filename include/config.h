@@ -27,13 +27,13 @@
 #define PIN_ENCODER_B      -1   // TODO
 
 // ---------- ค่าจากการสอบเทียบ (บทบาท 6 ต้องวัดจากชุดจริง) ----------
-#define LEAD_MM_PER_REV        0.0   // TODO: ค่า L (mm ต่อรอบ) จากการวัดจริง
-#define MICROSTEP              1    // TODO: ค่า microstep ที่ตั้งบน TB6600 (DIP switch)
+#define LEAD_MM_PER_REV        4.0   // วัดจริง 23/11/2026: หมุน 10 รอบ ได้ 4 cm (ยืนยันแล้ว)
+#define MICROSTEP              1    // ตั้งบน TB6600 DIP switch (ยืนยันแล้ว)
 #define ENCODER_PPR             600  // HN3806-AB600N: 600 พัลส์ต่อรอบ (x4 ถ้า decode แบบ 4 เท่า)
 #define ENCODER_DECODE_X4       true
 
-// steps/mm = (200 * MICROSTEP) / LEAD_MM_PER_REV
-// counts/mm = (ENCODER_PPR * 4) / LEAD_MM_PER_REV   (ถ้า decode แบบ 4 เท่า)
+// steps/mm = (200 * 1) / 4 = 50 steps/mm
+// counts/mm = (600 * 4) / 4 = 600 counts/mm
 // คำนวณจริงให้ทำใน calibration.cpp และยืนยันด้วยการวัดระยะจริง ห้าม hardcode เฉย ๆ
 
 // ---------- ขีดจำกัดการเคลื่อนที่ (soft limit, นอกเหนือจาก hardware limit sensor) ----------
