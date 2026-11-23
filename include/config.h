@@ -37,9 +37,8 @@
 
 // ---------- ขีดจำกัดการเคลื่อนที่ (soft limit, นอกเหนือจาก hardware limit sensor)
 // ----------
-#define SOFT_LIMIT_MIN_MM 0.0
-#define SOFT_LIMIT_MAX_MM                                                      \
-  0.0 // TODO: ตั้งค่าตามระยะใช้งานจริงที่วัดได้ ให้เผื่อระยะก่อนถึงเซนเซอร์ limit จริง
+#define SOFT_LIMIT_MIN_MM -100.0
+#define SOFT_LIMIT_MAX_MM 120.0
 
 // ---------- ความเร็ว/ความเร่งเริ่มต้น ----------
 #define DEFAULT_SPEED_MM_S 5.0
