@@ -10,39 +10,40 @@
 // =====================================================================
 
 // ---------- Pin map: TB6600 (PUL/DIR/ENA) ----------
-#define PIN_PUL        -1   // TODO: กำหนดขาจริง
-#define PIN_DIR        -1   // TODO
-#define PIN_ENA        -1   // TODO
+#define PIN_PUL 10 // PUL+
+#define PIN_DIR 11 // DIR+
 
 // ---------- Pin map: Proximity sensor (ผ่าน DST-1R4P-N) ----------
-#define PIN_SENSOR_LEFT    -1   // TODO: SN04-N ซ้าย
-#define PIN_SENSOR_HOME    -1   // TODO: SN04-N กลาง (หรือกำหนดตัว home ตามที่เลือกจริง)
-#define PIN_SENSOR_RIGHT   -1   // TODO: SN04-N ขวา
+#define PIN_SENSOR_LEFT 37  // เซนเซอร์ซ้ายสุด (Left End-Stop)
+#define PIN_SENSOR_HOME 38  // เซนเซอร์ตรงกลาง = HOME (0.00 cm)
+#define PIN_SENSOR_RIGHT 39 // เซนเซอร์ขวาสุด (Right End-Stop)
 
 // ---------- Pin map: ปุ่มหยุดฉุกเฉิน ----------
-#define PIN_ESTOP          -1   // TODO: ต่อฮาร์ดแวร์โดยตรง ต้องเทสแยกจากซอฟต์แวร์ด้วย
+#define PIN_ESTOP -1 // TODO: ยังไม่ได้กำหนด
 
 // ---------- Pin map: Encoder A/B (ผ่าน optocoupler PC817/EL817) ----------
-#define PIN_ENCODER_A      -1   // TODO: ต้องใช้ขาที่รองรับ PCNT
-#define PIN_ENCODER_B      -1   // TODO
+#define PIN_ENCODER_A 12 // OUTA (สีขาว)
+#define PIN_ENCODER_B 13 // OUTB (สีเขียว)
 
 // ---------- ค่าจากการสอบเทียบ (บทบาท 6 ต้องวัดจากชุดจริง) ----------
-#define LEAD_MM_PER_REV        4.0   // วัดจริง 23/11/2026: หมุน 10 รอบ ได้ 4 cm (ยืนยันแล้ว)
-#define MICROSTEP              1    // ตั้งบน TB6600 DIP switch (ยืนยันแล้ว)
-#define ENCODER_PPR             600  // HN3806-AB600N: 600 พัลส์ต่อรอบ (x4 ถ้า decode แบบ 4 เท่า)
-#define ENCODER_DECODE_X4       true
+#define LEAD_MM_PER_REV 4.0 // วัดจริง 23/11/2026: หมุน 10 รอบ ได้ 4 cm (ยืนยันแล้ว)
+#define MICROSTEP 1         // ตั้งบน TB6600 DIP switch (ยืนยันแล้ว)
+#define ENCODER_PPR 600 // HN3806-AB600N: 600 พัลส์ต่อรอบ (x4 ถ้า decode แบบ 4 เท่า)
+#define ENCODER_DECODE_X4 true
 
 // steps/mm = (200 * 1) / 4 = 50 steps/mm
 // counts/mm = (600 * 4) / 4 = 600 counts/mm
 // คำนวณจริงให้ทำใน calibration.cpp และยืนยันด้วยการวัดระยะจริง ห้าม hardcode เฉย ๆ
 
-// ---------- ขีดจำกัดการเคลื่อนที่ (soft limit, นอกเหนือจาก hardware limit sensor) ----------
-#define SOFT_LIMIT_MIN_MM     0.0
-#define SOFT_LIMIT_MAX_MM     0.0   // TODO: ตั้งค่าตามระยะใช้งานจริงที่วัดได้ ให้เผื่อระยะก่อนถึงเซนเซอร์ limit จริง
+// ---------- ขีดจำกัดการเคลื่อนที่ (soft limit, นอกเหนือจาก hardware limit sensor)
+// ----------
+#define SOFT_LIMIT_MIN_MM 0.0
+#define SOFT_LIMIT_MAX_MM                                                      \
+  0.0 // TODO: ตั้งค่าตามระยะใช้งานจริงที่วัดได้ ให้เผื่อระยะก่อนถึงเซนเซอร์ limit จริง
 
 // ---------- ความเร็ว/ความเร่งเริ่มต้น ----------
-#define DEFAULT_SPEED_MM_S      5.0
-#define DEFAULT_ACCEL_MM_S2     20.0
+#define DEFAULT_SPEED_MM_S 5.0
+#define DEFAULT_ACCEL_MM_S2 20.0
 
 // ---------- Serial ----------
-#define SERIAL_BAUD            115200
+#define SERIAL_BAUD 115200
