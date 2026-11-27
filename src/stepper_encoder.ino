@@ -288,7 +288,8 @@ void loop() {
       printStatus();
     }
     else {
-      long steps = line.toInt();             // "100" → 100, "-250" → -250
+      float cm = line.toFloat();  
+      long steps = (cm / 0.4) * 200;             // "100" → 100, "-250" → -250
       if (steps == 0) {
         Serial.println("คำสั่งไม่ถูกต้อง: พิมพ์ตัวเลข, H, Z หรือ S");
         return;
